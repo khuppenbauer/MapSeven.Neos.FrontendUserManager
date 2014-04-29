@@ -1,0 +1,16 @@
+resources:
+  methods:
+    MapSeven_Neos_FrontendUserManager_Registration: 'method(MapSeven\Neos\FrontendUserManager\Controller\RegistrationController->(index|create)Action())'
+    MapSeven_Neos_FrontendUserManager_Login: 'method(TYPO3\Flow\Security\Authentication\Controller\AbstractAuthenticationController->(?<!initialize).*Action()) || method(MapSeven\Neos\FrontendUserManager\Controller\LoginController->(index|authenticate)Action())'
+    MapSeven_Neos_FrontendUserManager_Logout: 'method(MapSeven\Neos\FrontendUserManager\Controller\LogoutController->(index|logout)Action())'
+
+roles:
+  User: []
+
+acls:
+  Everybody:
+    methods:
+      # we need to explicitly allow access to the public actions because by default all actions are denied by the Neos policies
+      MapSeven_Neos_FrontendUserManager_Registration: GRANT
+      MapSeven_Neos_FrontendUserManager_Login: GRANT
+      MapSeven_Neos_FrontendUserManager_Logout: GRANT

@@ -1,0 +1,30 @@
+TYPO3:
+
+  Flow:
+    security:
+      authentication:
+        providers:
+          Typo3BackendProvider:
+            requestPatterns:
+              MapSeven\Neos\FrontendUserManager\Security\NeosRequestPattern: 'backend'
+          FrontendProvider:
+            provider: 'PersistedUsernamePasswordProvider'
+            requestPatterns:
+              MapSeven\Neos\FrontendUserManager\Security\NeosRequestPattern: 'frontend'
+
+  Neos:
+    typoScript:
+      autoInclude:
+          # auto-include "Private/Resources/TypoScript/Root.ts2" from this package!
+        'MapSeven.Neos.FrontendUserManager': TRUE
+
+  TypoScript:
+    rendering:
+      exceptionHandler: 'TYPO3\TypoScript\Core\ExceptionHandlers\ThrowingHandler'
+
+MapSeven:
+  Neos:
+    FrontendUserManager:
+      providerName: 'FrontendProvider'
+      registration:
+        defaultRole: 'MapSeven.Neos.FrontendUserManager:User'

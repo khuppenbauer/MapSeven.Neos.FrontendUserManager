@@ -1,0 +1,31 @@
+##
+# "Login" element, extending "Plugin"
+#
+prototype(MapSeven.Neos.FrontendUserManager:Login) < prototype(TYPO3.Neos:Plugin) {
+	package = 'MapSeven.Neos.FrontendUserManager'
+	controller = 'Login'
+	action = 'index'
+}
+
+##
+# "Login" element, extending "Plugin"
+#
+prototype(MapSeven.Neos.FrontendUserManager:Logout) < prototype(TYPO3.Neos:Plugin) {
+	package = 'MapSeven.Neos.FrontendUserManager'
+	controller = 'Logout'
+	action = 'index'
+}
+
+##
+# "Login" element, extending "Plugin"
+#
+prototype(MapSeven.Neos.FrontendUserManager:Registration) < prototype(TYPO3.Neos:Plugin) {
+	package = 'MapSeven.Neos.FrontendUserManager'
+	controller = 'Registration'
+	action = 'index'
+}
+
+
+prototype(TYPO3.Neos:PluginView).@exceptionHandler = 'TYPO3\\TypoScript\\Core\\ExceptionHandlers\\ThrowingHandler'
+prototype(TYPO3.Neos:Content).@exceptionHandler = 'TYPO3\\TypoScript\\Core\\ExceptionHandlers\\ThrowingHandler'
+prototype(TYPO3.TypoScript:Matcher).@exceptionHandler = 'TYPO3\\TypoScript\\Core\\ExceptionHandlers\\ThrowingHandler'

@@ -1,0 +1,85 @@
+##
+# A simple Frontend registration form
+#
+'MapSeven.Neos.FrontendUserManager:Registration':
+  superTypes: ['TYPO3.Neos:Plugin']
+  ui:
+    label: 'Frontend User Register form'
+    icon: 'icon-user'
+    group: 'plugins'
+    inspector:
+      groups:
+        pluginSettings:
+          label: 'Plugin Settings'
+  properties:
+    autoLogin:
+      type: boolean
+      ui:
+        label: 'Login after Registration'
+        inspector:
+          group: 'pluginSettings'
+    redirect:
+      type: reference
+      ui:
+        label: 'Redirect after Registration'
+        inspector:
+          group: 'pluginSettings'
+  options:
+    pluginViews:
+      Registration:
+        label: 'Registration'
+        controllerActions:
+          MapSeven\Neos\FrontendUserManager\Controller\RegistrationController: ['index']
+##
+# A simple Frontend login form
+#
+'MapSeven.Neos.FrontendUserManager:Login':
+  superTypes: ['TYPO3.Neos:Plugin']
+  ui:
+    label: 'Frontend User Login'
+    icon: 'icon-user'
+    group: 'plugins'
+    inspector:
+      groups:
+        pluginSettings:
+          label: 'Plugin Settings'
+  properties:
+    redirect:
+      type: reference
+      ui:
+        label: 'Redirect after Login'
+        inspector:
+          group: 'pluginSettings'
+  options:
+    pluginViews:
+      Login:
+        label: 'Login'
+        controllerActions:
+          MapSeven\Neos\FrontendUserManager\Controller\LoginController: ['index']
+
+##
+# A simple Frontend logout form
+#
+'MapSeven.Neos.FrontendUserManager:Logout':
+  superTypes: ['TYPO3.Neos:Plugin']
+  ui:
+    label: 'Frontend User Logout'
+    icon: 'icon-user'
+    group: 'plugins'
+    inspector:
+      groups:
+        pluginSettings:
+          label: 'Plugin Settings'
+  properties:
+    redirect:
+      type: reference
+      ui:
+        label: 'Redirect after Logout'
+        inspector:
+          group: 'pluginSettings'
+  options:
+    pluginViews:
+      Logout:
+        label: 'Logout'
+        controllerActions:
+          MapSeven\Neos\FrontendUserManager\Controller\LogoutController: ['index']
