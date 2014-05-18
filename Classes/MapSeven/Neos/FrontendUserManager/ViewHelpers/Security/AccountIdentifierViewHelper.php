@@ -15,6 +15,7 @@ use TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper;
  * Returns the Users Fullname or if not set the Account Identifier
  */
 class AccountIdentifierViewHelper extends AbstractViewHelper {
+
 	/**
 	 * @var Context
 	 */

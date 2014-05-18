@@ -1,6 +1,6 @@
 {
     "name": "mapseven/neos-frontendusermanager",
-    "type": "typo3-flow-package",
+    "type": "typo3-flow-plugin",
     "description": "Simple Frontend User Management with Registration and Login",
     "require": {
         "typo3/neos": "*"

@@ -1,4 +1,4 @@
-<f:validation.results>
+<f:validation.results for="registration.{property}">
     <f:if condition="{validationResults.flattenedErrors}">
         <f:for each="{validationResults.errors}" as="error">{error}</f:for>
     </f:if>

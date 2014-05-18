@@ -9,27 +9,25 @@
     group: 'plugins'
     inspector:
       groups:
-        pluginSettings:
-          label: 'Plugin Settings'
+        settings:
+          label: 'Settings'
   properties:
     autoLogin:
       type: boolean
       ui:
         label: 'Login after Registration'
         inspector:
-          group: 'pluginSettings'
+          group: 'settings'
     redirect:
       type: reference
       ui:
         label: 'Redirect after Registration'
         inspector:
-          group: 'pluginSettings'
-  options:
-    pluginViews:
-      Registration:
-        label: 'Registration'
-        controllerActions:
-          MapSeven\Neos\FrontendUserManager\Controller\RegistrationController: ['index']
+          group: 'settings'
+          editorOptions:
+            nodeTypes:
+              - 'TYPO3.Neos.NodeTypes:Page'
+
 ##
 # A simple Frontend login form
 #
@@ -41,7 +39,7 @@
     group: 'plugins'
     inspector:
       groups:
-        pluginSettings:
+        settings:
           label: 'Plugin Settings'
   properties:
     redirect:
@@ -49,13 +47,10 @@
       ui:
         label: 'Redirect after Login'
         inspector:
-          group: 'pluginSettings'
-  options:
-    pluginViews:
-      Login:
-        label: 'Login'
-        controllerActions:
-          MapSeven\Neos\FrontendUserManager\Controller\LoginController: ['index']
+          group: 'settings'
+          editorOptions:
+            nodeTypes:
+              - 'TYPO3.Neos.NodeTypes:Page'
 
 ##
 # A simple Frontend logout form
@@ -68,18 +63,15 @@
     group: 'plugins'
     inspector:
       groups:
-        pluginSettings:
-          label: 'Plugin Settings'
+        settings:
+          label: 'Settings'
   properties:
     redirect:
       type: reference
       ui:
         label: 'Redirect after Logout'
         inspector:
-          group: 'pluginSettings'
-  options:
-    pluginViews:
-      Logout:
-        label: 'Logout'
-        controllerActions:
-          MapSeven\Neos\FrontendUserManager\Controller\LogoutController: ['index']
+          group: 'settings'
+          editorOptions:
+            nodeTypes:
+              - 'TYPO3.Neos.NodeTypes:Page'
