@@ -27,4 +27,4 @@ MapSeven:
     FrontendUserManager:
       providerName: 'FrontendProvider'
       registration:
-        defaultRole: 'MapSeven.Neos.FrontendUserManager:User'
+        defaultRole: ['MapSeven.Neos.FrontendUserManager:User']

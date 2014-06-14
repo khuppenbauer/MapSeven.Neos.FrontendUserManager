@@ -72,7 +72,7 @@ class RegistrationController extends AbstractBaseController {
 		$user->addElectronicAddress($electronicAddress);
 		$this->partyRepository->add($user);
 
-		$roleIdentifiers = array($this->settings['registration']['defaultRole']);
+		$roleIdentifiers = $this->settings['registration']['defaultRole'];
 		$password = $registration->getPassword();
 		$password = array_shift($password);
 		$account = $this->accountFactory->createAccountWithPassword($registration->getUsername(), $password, $roleIdentifiers, $this->settings['providerName']);
